@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Add your CSS styles here or in a separate stylesheet */
+    .star-rating {
+      direction: rtl;
+      display: flex;
+      font-size: 2rem;
+      justify-content: center;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .star-rating input {
+      display: none;
+    }
+
+    .star-rating label {
+      color: #ddd;
+      font-size: 2rem;
+    }
+
+    .star-rating input:checked~label,
+    .star-rating input:checked~label~label {
+      color: #ff0;
+    }
+
+    .star-rating input:focus~label {
+      color: #fc0;
+    }
+
+    .star-rating label:hover,
+    .star-rating label:hover~label {
+      color: #fc0;
+    }
+
+    .star-rating-container {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Contact Section -->
+  <div class="contact-container">
+    <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data" class="contact-left">
+      <div class="contact-left-title">
+        <h2>Submit Review</h2>
+        <hr>
+        <p class="email">Please send a picture to our email
+          <a href="mailto:spinstrikebd@gmail.com">spinstrikebd@gmail.com </a> <--(CLICK) </p>
+
+      </div>
+      <input type="hidden" name="access_key" value="263c1df5-fd55-4f57-8704-15a2659d3cee">
+
+      <input type="text" name="name" placeholder="Your Name" class="contact-inputs" id="nam" required>
+
+
+      <input type="email" name="email" placeholder="Your Email" class="contact-inputs" id="num" required>
+
+      <input type="name" name="product name" placeholder="Your Product name" class="contact-inputs" id="num" required>
+
+      <div class="review-section">
+        <label for="review-rating">Review Rating:</label>
+        <div class="star-rating-container">
+          <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5" required>
+            <label for="star5" title="5 stars">&#9733;</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4" title="4 stars">&#9733;</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3" title="3 stars">&#9733;</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2" title="2 stars">&#9733;</label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1" title="1 star">&#9733;</label>
+          </div>
+        </div>
+      </div>
+
+      <textarea name="message" placeholder="Put your review here.. (>O//_//O)>" class="contact-inputs" id="txtbox"
+        required></textarea>
+
+      <button class="bbtn" type="submit">Submit review</button>
+    </form>
+    <div class="contact-right">
+      <img src="assets/right-img.png" alt="A girl crying for a Beyblade X Dransword" class="gl">
+    </div>
+  </div>
+
+  <!-- Modal for product selection -->
+  <div id="product-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Select Products</h2>
+      <div id="product-list">
+        <!-- Products will be dynamically added here -->
+      </div>
+      <button class="con-button" type="button" onclick="updateTotalModal()">Confirm Selection</button>
+    </div>
+  </div>
+
+
+</body>
+<script>
+  function openModal() {
+    document.getElementById('product-modal').style.display = 'block';
+  }
+
+  function closeModal() {
+    document.getElementById('product-modal').style.display = 'none';
+  }
+
+  // Add more functions if needed to handle product selection
+</script>
+
+</html>
